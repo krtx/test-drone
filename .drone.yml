@@ -1,7 +1,24 @@
-pipeline:
-    build:
-        image: golang
-        commands:
-            - go get
-            - go build
-            - go test
+---
+kind: pipeline
+name: p-1
+
+steps:
+- name: build
+  image: golang
+  commands:
+  - go get
+  - go build
+  - go test
+
+---
+kind: pipeline
+name: p-2
+
+steps:
+- name: build
+  image: golang
+  commands:
+  - go get
+  - go build
+  - go test
+
