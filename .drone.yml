@@ -22,3 +22,15 @@ steps:
   - go build
   - go test
 
+---
+kind: pipeline
+name: p-3
+
+steps:
+- name: build
+  image: golang
+  commands:
+  - go get
+  - go build
+  - go test
+
