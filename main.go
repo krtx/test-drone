@@ -9,5 +9,5 @@ func main() {
     fmt.Println("aiueo")
     fmt.Println("aiueo")
     fmt.Println("aiue")
-    fmt.Println("")
+    fmt.Println("aa")
 }
