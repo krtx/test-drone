@@ -8,11 +8,9 @@ steps:
   - go build
 
 - name: docker  
-  image: plugins/docker
+  image: plugins/ecr
   settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
+    registry: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com
     repo: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com/test-image
-    tags: latest
+    tags:
+    - latest
