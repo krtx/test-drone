@@ -7,17 +7,14 @@ steps:
   steps:
   - go build
 
-- name: docker login
-  image: alpine
-  steps:
-  - eval $(aws ecr get-login --no-include-email --region ap-northeast-1)
-  - ls ~/.docker
-  - cat ~/.docker/config.json
-
 - name: docker  
-  image: plugins/ecr
+  image: plugins/docker
   settings:
     registry: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com
     repo: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com/test-image
+    username:
+      from_secret: dockerusername
+    password:
+      from_secret: dockerpassword
     tags:
     - latest
