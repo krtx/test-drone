@@ -9,8 +9,10 @@ steps:
   - go build
 
 - name: login
-  image: amazonlinux:2
+  image: python:3.7
   commands:
+  - pip3 install awscli --upgrade --user
+  - aws --version
   - aws ecr get-login --no-include-email --region ap-northeast-1
   - eval $(aws ecr get-login --no-include-email --region ap-northeast-1)
 
