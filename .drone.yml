@@ -11,6 +11,8 @@ steps:
   image: golang:1.10
   steps:
   - eval $(aws ecr get-login --no-include-email --region ap-northeast-1)
+  - ls ~/.docker
+  - cat ~/.docker/config.json
 
 - name: docker  
   image: plugins/ecr
