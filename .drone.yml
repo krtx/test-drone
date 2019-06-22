@@ -9,7 +9,7 @@ steps:
   - go build
 
 - name: login
-  image: alpine
+  image: amazonlinux:2
   commands:
   - aws ecr get-login --no-include-email --region ap-northeast-1
   - eval $(aws ecr get-login --no-include-email --region ap-northeast-1)
