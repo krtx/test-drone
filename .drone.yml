@@ -13,8 +13,8 @@ steps:
     registry: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com
     repo: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com/test-image
     username:
-      from_secret: dockerusername
+      from_secret: docker_username
     password:
-      from_secret: dockerpassword
+      from_secret: docker_password
     tags:
     - latest
