@@ -19,7 +19,8 @@ steps:
 - name: docker  
   image: plugins/ecr
   settings:
-    registry: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com
     repo: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com/test-image
+    registry: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com
+    region: ap-northeast-1
     tags:
     - latest
