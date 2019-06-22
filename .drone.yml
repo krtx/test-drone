@@ -4,13 +4,13 @@ name: default
 steps:
 - name: build
   image: golang:1.10
-  steps:
+  commands:
   - go test -v ./...
   - go build
 
 - name: login
   image: alpine
-  steps:
+  commands:
   - aws ecr get-login --no-include-email --region ap-northeast-1
   - eval $(aws ecr get-login --no-include-email --region ap-northeast-1)
 
