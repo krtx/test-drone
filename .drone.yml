@@ -24,3 +24,4 @@ steps:
     region: ap-northeast-1
     tags:
     - latest
+    
