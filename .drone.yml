@@ -23,6 +23,7 @@ steps:
   - name: root
     path: /root
 
+# to mount host volumes requires to be trusted
 volumes:
 - name: docker
   host:
