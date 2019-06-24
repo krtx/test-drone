@@ -10,7 +10,7 @@ steps:
   - python get-pip.py --disable-pip-version-check --no-cache-dir
   - pip install awscli
   - $(aws ecr get-login --region ap-northeast-1 --no-include-email)
-  - ls ~
+  - ls -al /root
   volumes:
   - name: docker
     path: /var/run/docker.sock
