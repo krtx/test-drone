@@ -13,23 +13,14 @@ steps:
   - ls -al /root
   - ls -al /root/.docker
   - cat /root/.docker/config.json
+  - docker pull 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com/test-image
   volumes:
   - name: docker
     path: /var/run/docker.sock
-  - name: root
-    path: /root
-
-- name: cat
-  image: alpine
-  commands:
-  - ls -al /root
-  - cat /root/.docker/config.json
-  volumes:
-  - name: root
-    path: /root
 
 - name: run
   image: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com/test-image
+  pull: never
   detach: true
   volumes:
   - name: root
@@ -39,7 +30,3 @@ volumes:
 - name: docker
   host:
     path: /var/run/docker.sock
-
-- name: root
-  host:
-    path: /root
