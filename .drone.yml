@@ -10,16 +10,25 @@ steps:
   - python get-pip.py --disable-pip-version-check --no-cache-dir
   - pip install awscli
   - $(aws ecr get-login --region ap-northeast-1 --no-include-email)
-  - docker pull 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com/test-image
+  - ls ~
   volumes:
   - name: docker
     path: /var/run/docker.sock
+  - name: root
+    path: /root
 
 - name: run
   image: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com/test-image
   detach: true
+  volumes:
+  - name: root
+    path: /root
 
 volumes:
 - name: docker
   host:
     path: /var/run/docker.sock
+
+- name: root
+  host:
+    path: /root
