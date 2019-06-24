@@ -5,14 +5,11 @@ steps:
 - name: login
   image: docker
   commands:
-  - apk --update add python curl
-  - wget -O get-pip.py 'https://bootstrap.pypa.io/get-pip.py'
-  - python get-pip.py --disable-pip-version-check --no-cache-dir
-  - pip install awscli
+  # install awscli
+  - apk --update add python curl && wget -O get-pip.py 'https://bootstrap.pypa.io/get-pip.py' && python get-pip.py --disable-pip-version-check --no-cache-dir && pip install awscli
+  # login to ecr
   - $(aws ecr get-login --region ap-northeast-1 --no-include-email)
-  - ls -al /root
-  - ls -al /root/.docker
-  - cat /root/.docker/config.json
+  # pull private images
   - docker pull 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com/test-image
   volumes:
   - name: docker
