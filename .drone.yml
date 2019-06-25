@@ -15,6 +15,7 @@ steps:
   - name: docker
     path: /var/run/docker.sock
 
+
 - name: run
   image: 706429988202.dkr.ecr.ap-northeast-1.amazonaws.com/test-image
   pull: never
